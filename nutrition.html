@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition - ZEN Fitness</title>
+   <!-- Google Fonts: Roboto -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- Skeleton CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+<!-- Your Custom Styles -->
+<link rel="stylesheet" href="CSS/styles.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+   <nav class="navbar" role="navigation">
+
+        <div class="nav-left">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" class="logo">
+                <span class="brand-name">FITNESS</span>
+            </a>
+        </div>
+
+        <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="nutrition.html">Nutrition</a></li>
+    <li><a href="workouts.html">Workouts</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+
+
+        <a href="contact.html" class="member-btn">Become A Member</a>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="nutrition-hero">
+        <h1>Nutrition</h1>
+        <p>Fuel your body. Transform your results.</p>
+    </section>
+
+
+    <!-- NUTRITION SECTION -->
+    <section class="nutrition-section">
+        <div class="nutrition-container">
+
+            <div class="nutrition-text">
+
+                <h1 class="nutrition-title">Why Nutrition Matters</h1>
+                <p>Eating right is just as important as working out. Good nutrition helps you build muscle,
+                    burn fat, recover faster, and stay energized throughout the day.</p>
+
+                <h2>Healthy Eating Basics</h2>
+                <p>Healthy eating doesn’t mean eating perfectly — it means being consistent. Focus on:</p>
+                <ul style="margin-top:10px; color:#333; line-height:1.7;">
+                    <li>Lean proteins: chicken, eggs, fish, tofu</li>
+                    <li>Whole carbs: rice, potatoes, oats, pasta</li>
+                    <li>Healthy fats: nuts, avocado, olive oil</li>
+                    <li>Fruits & vegetables every day</li>
+                    <li>Drinking enough water</li>
+                </ul>
+
+                <h2 style="margin-top:40px;">How to Track Calories</h2>
+                <p>Tracking calories is a simple way to understand your body:</p>
+
+                <ul style="margin-top:10px; color:#333; line-height:1.7;">
+                    <li><strong>Eat more</strong> than you burn → gain weight</li>
+                    <li><strong>Eat less</strong> than you burn → lose weight</li>
+                    <li><strong>Eat the same</strong> as you burn → maintain weight</li>
+                </ul>
+
+                <p>Don’t aim for perfection — aim for consistency.</p>
+            </div>
+
+            <div class="nutrition-image">
+                <img src="img/nutrition.jpg" alt="Healthy Food"loading="lazy">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- BMI CALCULATOR -->
+    <section class="bmi-section">
+        <h2 class="bmi-title">BMI Calculator</h2>
+
+        <div class="bmi-box">
+
+            <div class="bmi-input-group">
+                <label>Height (cm)</label>
+                <input type="number" id="height">
+            </div>
+
+            <div class="bmi-input-group">
+                <label>Weight (kg)</label>
+                <input type="number" id="weight">
+            </div>
+
+            <button onclick="calculateBMI()" class="bmi-btn">Calculate</button>
+
+            <p id="bmi-result"></p>
+
+        </div>
+    </section>
+
+
+    <script>
+        function calculateBMI() {
+            let h = document.getElementById("height").value;
+            let w = document.getElementById("weight").value;
+
+            if (h === "" || w === "") {
+                document.getElementById("bmi-result").innerText = "Please enter height and weight.";
+                return;
+            }
+
+            let bmi = (w / ((h / 100) ** 2)).toFixed(1);
+            document.getElementById("bmi-result").innerText = "Your BMI: " + bmi;
+        }
+    </script>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 FITNESS. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

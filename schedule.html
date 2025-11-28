@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule</title>
+    <!-- Google Fonts: Roboto -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- Skeleton CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+<!-- Your Custom Styles -->
+<link rel="stylesheet" href="CSS/styles.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar" role="navigation">
+    <div class="nav-left">
+        <a href="index.html" class="logo-link">
+            <img src="img/logo.png" class="logo" alt="Logo">
+            <span class="brand-name">FITNESS</span>
+        </a>
+    </div>
+
+   <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="nutrition.html">Nutrition</a></li>
+    <li><a href="workouts.html">Workouts</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+
+
+    <a href="contact.html" class="member-btn">Become a Member</a>
+</nav>
+
+
+    <!-- SCHEDULE HERO -->
+    <section class="schedule-hero">
+        <h1>Schedule</h1>
+        <p>The Grind Never Stop.</p>
+        <p>Find your perfect time to train and grow stronger</p>
+    </section>
+
+    <!-- DAY TABS -->
+    <div class="day-tabs">
+        <button class="day-tab active" data-day="sunday">Sunday</button>
+        <button class="day-tab" data-day="monday">Monday</button>
+        <button class="day-tab" data-day="tuesday">Tuesday</button>
+        <button class="day-tab" data-day="wednesday">Wednesday</button>
+        <button class="day-tab" data-day="thursday">Thursday</button>
+        <button class="day-tab" data-day="friday">Friday</button>
+        <button class="day-tab" data-day="saturday">Saturday</button>
+    </div>
+
+    <!-- SCHEDULE GRID -->
+    <section class="schedule-page">
+
+        <!-- SUNDAY -->
+        <div class="schedule-grid active" id="sunday">
+            <div class="class-card red">
+                <span class="time">6am - 8am</span>
+                <h3>Kickboxing</h3>
+                <p class="trainer">by Jhos Kusam</p>
+                <p class="open-hours">Gym Opens: 5:30am | Closes: 9pm</p>
+            </div>
+
+            <div class="class-card">
+                <span class="time">9am - 10am</span>
+                <h3>Nutrition Cooking</h3>
+                <p class="trainer">by Chef Mila</p>
+                <p class="open-hours">Kitchen Studio Hours: 9am - 6pm</p>
+            </div>
+
+            <div class="class-card">
+                <span class="time">4pm - 5pm</span>
+                <h3>Stretch & Mobility</h3>
+                <p class="trainer">by Alicia Jay</p>
+                <p class="open-hours">Gym Closes: 9pm</p>
+            </div>
+        </div>
+
+        <!-- MONDAY -->
+        <div class="schedule-grid" id="monday">
+            <div class="class-card">
+                <span class="time">7am - 8am</span>
+                <h3>Push Day</h3>
+                <p class="trainer">by Coach Trish</p>
+                <p class="open-hours">Gym: 5am - 10pm</p>
+            </div>
+
+            <div class="class-card">
+                <span class="time">6pm - 7pm</span>
+                <h3>Yoga Flow</h3>
+                <p class="trainer">by Serena Moon</p>
+            </div>
+        </div>
+
+        <!-- TUESDAY -->
+        <div class="schedule-grid" id="tuesday">
+            <div class="class-card">
+                <span class="time">8am - 9am</span>
+                <h3>Pull Day</h3>
+                <p class="trainer">by Coach Daniel</p>
+            </div>
+
+            <div class="class-card red">
+                <span class="time">5pm - 7pm</span>
+                <h3>HIIT Extreme</h3>
+                <p class="trainer">by Jhos Kusam</p>
+            </div>
+        </div>
+
+        <!-- WEDNESDAY -->
+        <div class="schedule-grid" id="wednesday">
+            <div class="class-card">
+                <span class="time">10am - 11am</span>
+                <h3>Nutrition Basics</h3>
+                <p class="trainer">by Chef Luna</p>
+            </div>
+        </div>
+
+        <!-- THURSDAY -->
+        <div class="schedule-grid" id="thursday">
+            <div class="class-card">
+                <span class="time">6pm - 8pm</span>
+                <h3>Strength Training</h3>
+                <p class="trainer">by Coach Leo</p>
+            </div>
+        </div>
+
+        <!-- FRIDAY -->
+        <div class="schedule-grid" id="friday">
+            <div class="class-card">
+                <span class="time">5pm - 6pm</span>
+                <h3>Full Body Circuit</h3>
+                <p class="trainer">by Chloe V</p>
+            </div>
+        </div>
+
+        <!-- SATURDAY -->
+        <div class="schedule-grid" id="saturday">
+            <div class="class-card red">
+                <span class="time">7am - 9am</span>
+                <h3>CrossFit</h3>
+                <p class="trainer">by Coach Mikey</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy;© 2025 FITNESS. All Rights Reserved.</p>
+    </footer>
+
+    <!-- TABS JS -->
+    <script>
+        const tabs = document.querySelectorAll(".day-tab");
+        const grids = document.querySelectorAll(".schedule-grid");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                grids.forEach(g => g.classList.remove("active"));
+                document.getElementById(tab.dataset.day).classList.add("active");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
